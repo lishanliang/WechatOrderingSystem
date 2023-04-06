@@ -1,0 +1,45 @@
+ spring:
+  datasource: #数据库的驱动 对应引入的mysql依赖
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.201.186.147/sell?characterEncoding=utf-8&useSSL=false
+  jpa: #将数据库语句打印出来
+    show-sql: true
+  jackson: #全局设置 后台不返回值为空的字段 对应与一个java文件中的局部配置//@JsonInclude(JsonInclude.Include.NON_NULL) 严格来说有些不是必须的字段 如果是NULL就不返回给前端
+    default-property-inclusion: non_null
+  redis: #redis的配置
+    host: 10.201.186.147
+    port: 6379
+
+ server:
+    context-path: /sell #url的前缀 项目名字叫sell
+
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
+#  level:
+#    com.imooc.LoggerTest: debug
+
+#wechat:
+#  mpAppId: wxd898fcb01713c658
+#  mpAppSecret: 47ccc303338cee6e62894fxxxxxxxxxxx
+#  openAppId: wx6ad144e54af67d87
+#  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+#  mchId: 1483469312
+#  mchKey: 06C56A89949D617xxxxxxxxxxx
+#  keyPath: /var/weixin_cert/h5.p12  #微信密钥证书的路径
+#  notifyUrl: http://sell.natapp4.cc/sell/pay/notify #异步通知的地址
+#  templateId:
+#    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7 pc7LyEMb-yeQ  #模板Id
+##
+#projectUrl:
+#  wechatMpAuthorize: http://sell.natapp4.cc
+#  wechatOpenAuthorize: http://sell.natapp4.cc
+#  sell: http://sell.natapp4.cc
+
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml  #mybatis去这个路径下找到所有xml文件，就可以找到相应的mapper文件
